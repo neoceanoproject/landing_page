@@ -4,7 +4,7 @@ var camera, scene, renderer;
 var waterNormals;
 var envTexture;
 var azimuth = .45843;
-var inclination = .3011;
+var inclination = .2011;
 
 var loader = new THREE.TextureLoader();
 var clock = new THREE.Clock();
