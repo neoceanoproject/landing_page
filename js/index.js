@@ -41,11 +41,11 @@ function initSky() {
     scene.add( sunSphere );
 
     uniforms = sky.uniforms;
-    uniforms.turbidity.value = 0.55;
-    uniforms.rayleigh.value = 0.4;
-    uniforms.luminance.value = 0.1;
-    uniforms.mieCoefficient.value = 0.28;
-    uniforms.mieDirectionalG.value = 1.2;
+    uniforms.turbidity.value = 0.355;
+    uniforms.rayleigh.value = 0.5;
+    uniforms.luminance.value = 0.001;
+    uniforms.mieCoefficient.value = 0.128;
+    uniforms.mieDirectionalG.value = 1.6;
 
     moveSun();
 }
