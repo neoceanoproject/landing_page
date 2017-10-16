@@ -1,12 +1,3 @@
-@charset "UTF-8";
-body {
-  margin: 0;
-  font-size: 35vw;
-  font-family: Arial;
-  background: tomato;
-  color: purple;
-}
-
 .block:after {
   -webkit-animation: block-scroll 5s linear infinite alternate;
           animation: block-scroll 5s linear infinite alternate;
