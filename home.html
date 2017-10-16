@@ -35,18 +35,21 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<style>
 			body {
-				margin: 0px;
-    				overflow: hidden;
-    				background-color: #ffffff;
+    				background-color: black;
     		}
-
+			#background{
+				margin: 0px;
+				overflow:hidden;
+			}
 			#help{
 				position: absolute;
 				top: 0%;
 				left: 0%;
+				z-index: 2;
 			}
 			#content{
 				height: 100vh;
+				z-index: 1;
 				overflow-x: visible;
 				overflow-y: scroll;
 			}
@@ -80,13 +83,13 @@
   			</div>
 		</div>
 	</div>
-</body>
-</html>
-	<script src='./js/three.min.js'></script>
-	<script src='./js/OrbitControls.js'></script>
-	<script src='./js/Mirror.js'></script>
-	<script src='./js/WaterShader.js'></script>
-	<script src='./js/SkyShader.js'></script>
-	<script  src="js/index.js"></script>
+	<div class="background">
+		<script src='./js/three.min.js'></script>
+		<script src='./js/OrbitControls.js'></script>
+		<script src='./js/Mirror.js'></script>
+		<script src='./js/WaterShader.js'></script>
+		<script src='./js/SkyShader.js'></script>
+		<script  src="js/index.js"></script>
+	</div>
 </body>
 </html>
