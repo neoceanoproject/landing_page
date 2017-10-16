@@ -53,8 +53,8 @@ function initSky() {
 function moveSun(){
     var distance = 45000;
 
-    var theta = Math.PI * ( inclination - 0.5 );
-    var phi = 2 * Math.PI * (azimuth - 0.5 );
+    var theta = Math.PI * ( inclination - 0.22 );
+    var phi = 2 * Math.PI * (azimuth - .6 );
 
     sunSphere.position.x = distance * Math.cos( phi );
     sunSphere.position.y = distance * Math.sin( phi ) * Math.sin( theta );
