@@ -15,11 +15,11 @@ var v;
 var light;
 var rusty;
 
-loader.load( './images/waternormals.jpg', function ( t ) {
+loader.load( 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/896175/waternormals.jpg', function ( t ) {
     t.mapping = THREE.UVMapping;
     waterNormals = t;
     waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
-    rusty = loader.load( './images/tex08.jpg')
+    rusty = loader.load( 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/896175/tex08.jpg')
     rusty.wrapS = rusty.wrapT = THREE.RepeatWrapping;
 
     init();
@@ -32,7 +32,7 @@ function initSky() {
     sky = new THREE.Sky();
     scene.add( sky.mesh );
 
-    // Add Sun Helper
+       // Add Sun Helper
     sunSphere = new THREE.Mesh(
         new THREE.SphereBufferGeometry( 20, 16, 8 ),
         new THREE.MeshBasicMaterial( { color: 0x00bfff } )
@@ -40,16 +40,15 @@ function initSky() {
     sunSphere.visible = false;
     scene.add( sunSphere );
 
+    uniforms = sky.uniforms;
+    uniforms.turbidity.value = 0.9355;
+    uniforms.rayleigh.value = 1;
+    uniforms.luminance.value = 1;
+    uniforms.mieCoefficient.value = 1.128;
+    uniforms.mieDirectionalG.value = 1.5;
 
-      uniforms = sky.uniforms;
-      uniforms.turbidity.value = 0.9355;
-      uniforms.rayleigh.value = 1;
-      uniforms.luminance.value = 1;
-      uniforms.mieCoefficient.value = 1.128;
-      uniforms.mieDirectionalG.value = 1.5;
-
-      moveSun();
-  }
+    moveSun();
+}
 
 function moveSun(){
     var distance = 45000;
@@ -63,7 +62,6 @@ function moveSun(){
 
     sky.uniforms.sunPosition.value.copy( sunSphere.position );
 }
-
 function init() {
     container = document.createElement( 'div' );
     document.body.appendChild( container );
