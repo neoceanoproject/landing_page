@@ -40,21 +40,22 @@ function initSky() {
     sunSphere.visible = false;
     scene.add( sunSphere );
 
-    uniforms = sky.uniforms;
-    uniforms.turbidity.value = 0.355;
-    uniforms.rayleigh.value = 0.55;
-    uniforms.luminance.value = 0.001;
-    uniforms.mieCoefficient.value = 0.128;
-    uniforms.mieDirectionalG.value = 1.5;
 
-    moveSun();
-}
+      uniforms = sky.uniforms;
+      uniforms.turbidity.value = 0.9355;
+      uniforms.rayleigh.value = 1;
+      uniforms.luminance.value = 1;
+      uniforms.mieCoefficient.value = 1.128;
+      uniforms.mieDirectionalG.value = 1.5;
+
+      moveSun();
+  }
 
 function moveSun(){
     var distance = 45000;
 
-    var theta = Math.PI * ( inclination - 0.22 );
-    var phi = 2 * Math.PI * (azimuth - .6 );
+    var theta = Math.PI * ( inclination - 0.215 );
+    var phi = 4 * Math.PI * (azimuth - .5 );
 
     sunSphere.position.x = distance * Math.cos( phi );
     sunSphere.position.y = distance * Math.sin( phi ) * Math.sin( theta );
