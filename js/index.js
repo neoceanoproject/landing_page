@@ -42,7 +42,7 @@ function initSky() {
 
     uniforms = sky.uniforms;
     uniforms.turbidity.value = 0.9355;
-    uniforms.rayleigh.value = 1;
+    uniforms.rayleigh.value = 9;
     uniforms.luminance.value = 1;
     uniforms.mieCoefficient.value = 1.128;
     uniforms.mieDirectionalG.value = 1.5;
