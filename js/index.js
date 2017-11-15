@@ -15,11 +15,11 @@ var v;
 var light;
 var rusty;
 
-loader.load( './images/waternormals.jpg', function ( t ) {
+loader.load( 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/896175/waternormals.jpg', function ( t ) {
     t.mapping = THREE.UVMapping;
     waterNormals = t;
     waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
-    rusty = loader.load( './images/tex08.jpg')
+    rusty = loader.load( 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/896175/tex08.jpg')
     rusty.wrapS = rusty.wrapT = THREE.RepeatWrapping;
 
     init();
@@ -32,7 +32,7 @@ function initSky() {
     sky = new THREE.Sky();
     scene.add( sky.mesh );
 
-    // Add Sun Helper
+       // Add Sun Helper
     sunSphere = new THREE.Mesh(
         new THREE.SphereBufferGeometry( 20, 16, 8 ),
         new THREE.MeshBasicMaterial( { color: 0x00bfff } )
@@ -41,10 +41,10 @@ function initSky() {
     scene.add( sunSphere );
 
     uniforms = sky.uniforms;
-    uniforms.turbidity.value = 0.355;
-    uniforms.rayleigh.value = 0.55;
-    uniforms.luminance.value = 0.001;
-    uniforms.mieCoefficient.value = 0.128;
+    uniforms.turbidity.value = 0.9355;
+    uniforms.rayleigh.value = 1;
+    uniforms.luminance.value = 1;
+    uniforms.mieCoefficient.value = 1.128;
     uniforms.mieDirectionalG.value = 1.5;
 
     moveSun();
@@ -53,8 +53,8 @@ function initSky() {
 function moveSun(){
     var distance = 45000;
 
-    var theta = Math.PI * ( inclination - 0.22 );
-    var phi = 2 * Math.PI * (azimuth - .6 );
+    var theta = Math.PI * ( inclination - 0.215 );
+    var phi = 4 * Math.PI * (azimuth - .5 );
 
     sunSphere.position.x = distance * Math.cos( phi );
     sunSphere.position.y = distance * Math.sin( phi ) * Math.sin( theta );
@@ -62,7 +62,6 @@ function moveSun(){
 
     sky.uniforms.sunPosition.value.copy( sunSphere.position );
 }
-
 function init() {
     container = document.createElement( 'div' );
     document.body.appendChild( container );
